@@ -89,13 +89,15 @@ const Dashboard = () => {
             alignItems="center"
             borderBottom={`4px solid ${colors.primary[500]}`}
             colors={colors.grey[100]}
-            p="15px"
+            p="20px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+              Emergency Contact
             </Typography>
           </Box>
+          
           {mockTransactions.map((transaction, i) => (
+            
             <Box
               key={`${transaction.txId}-${i}`}
               display="flex"
@@ -112,17 +114,20 @@ const Dashboard = () => {
                 >
                   {transaction.txId}
                 </Typography>
-                <Typography color={colors.grey[100]}>
+                {/* <Typography color={colors.grey[100]}>
                   {transaction.user}
-                </Typography>
+                </Typography> */}
               </Box>
+              <br/>
               <Box color={colors.grey[100]}>{transaction.date}</Box>
               <Box
                 backgroundColor={colors.greenAccent[500]}
                 p="5px 10px"
                 borderRadius="4px"
+                display="flex"
+              alignItems="center"
               >
-                ${transaction.cost}
+                {transaction.cost}
               </Box>
             </Box>
           ))}
@@ -133,25 +138,45 @@ const Dashboard = () => {
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
-          p="30px"
+          p="10px"
         >
-          <Typography variant="h5" fontWeight="600">
-            Campaign
-          </Typography>
+          <Box
+          display="flex"
+          flexDirection="row"
+          alignItems="center">
+              <Typography variant="h7" fontWeight="600">
+                Speed Limit: 60MPH
+              </Typography>
+              <Typography variant="h6" fontWeight="600">
+                
+              </Typography>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              
+    
+              <Typography variant="h3" fontWeight="600" color={colors.redAccent[500]}>
+                SLOW DOWN
+              </Typography>
+          </Box>
           <Box
             display="flex"
             flexDirection="column"
             alignItems="center"
-            mt="25px"
+            mt="15px"
           >
-            <Typography
-              variant="h5"
-              color={colors.greenAccent[500]}
-              sx={{ mt: "15px" }}
-            >
-              $48,352 revenue generated
-            </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+          <div class="gauge">
+              <div class="progress">
+                  <div class="bar"></div>
+                  <div class="needle"></div>
+              </div>
+          </div>              
+           <Typography
+                variant="h5"
+                color={colors.redAccent[500]}
+                sx={{ mt: "15px" }}>
+              85 MPH
+           </Typography>
+        
           </Box>
         </Box>
         <Box
