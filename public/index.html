@@ -39,5 +39,22 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script>
+
+      const process_txt = document.querySelector('.process');
+      const success_txt = document.querySelector('.success');
+
+      setTimeout(() => {
+          process_txt.classList.add('active');
+      }, 0)
+
+      setTimeout(toggleMsg, 1600);
+
+      function toggleMsg() {
+          process_txt.classList.remove('active');
+          success_txt.classList.add('active');
+      }
+  </script>
   </body>
 </html>
